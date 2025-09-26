@@ -60,10 +60,10 @@ export default function Home() {
             href="/behavioral"
           />
           <InterviewCard
-            title="Technical Interview Practice"
-            description="Solve coding problems and technical questions with AI guidance."
+            title="Technical Interview Questions"
+            description="Solve coding problems and technical questions ."
             buttonText="Start Technical"
-            href="/technical"
+            href="/codeeditor"
           />
           <InterviewCard
             title="Mock Interviews"
