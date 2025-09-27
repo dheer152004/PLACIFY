@@ -54,22 +54,22 @@ export default function Home() {
         <h2 className="text-2xl font-bold mb-6">Explore More</h2>
         <div className="flex flex-wrap gap-6">
           <InterviewCard
-            title="Behavioral Interview Prep"
-            description="Practice common behavioral questions and improve your soft skills."
+            title="Logical Reasoning Prep"
+            description="Practice common logical reasoning questions and improve your critical thinking."
             buttonText="Start Behavioral"
-            href="/behavioral"
+            href="/logical_reasoning"
           />
           <InterviewCard
-            title="Technical Interview Questions"
+            title="Technical Interview"
             description="Solve coding problems and technical questions ."
             buttonText="Start Technical"
-            href="/codeeditor"
+            href="/code"
           />
           <InterviewCard
             title="Mock Interviews"
             description="Simulate real interviews with AI-powered feedback."
             buttonText="Start Mock Interview"
-            href="/mock"
+            href="/"
           />
         </div>
       </section>
