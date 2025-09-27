@@ -1,0 +1,74 @@
+.studyroom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg #0d5cdd);
+  color: #e2e8f0;
+  font-family: "Poppins", sans-serif;
+}
+
+.mode-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.mode-tabs button {
+  padding: 0.6rem 1.5rem;
+  border-radius: 999px;
+  border: none;
+  background: #134294;
+  color: #cbd5e1;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.mode-tabs button.active {
+  background: #f87171;
+  color: white;
+  box-shadow: 0 4px 15px rgba(157, 35, 35, 0.5);
+}
+
+.circle-timer {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.circle-timer:hover {
+  transform: scale(1.05);
+}
+
+.progress-bg {
+  opacity: 0.15;
+}
+
+.progress-bar {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  transition: stroke-dashoffset 1s linear;
+  filter: drop-shadow(0 0 8px rgba(101, 77, 77, 0.7));
+}
+
+.time-text {
+  position: absolute;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  text-shadow: 0 0 12px rgba(248, 113, 113, 0.7);
+}
+
+.click-hint {
+  position: absolute;
+  bottom: -50px;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}

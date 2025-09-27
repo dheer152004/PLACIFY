@@ -1,0 +1,663 @@
+/* FILE PATH: frontend/src/index.css */
+/* This is the final CSS file with the new Grid layout. */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html, #root {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0c0a1a;
+  color: #EAEAEA;
+  overflow-x: hidden;
+}
+
+/* --- THE FINAL LAYOUT FIX IS HERE --- */
+.app-layout {
+  display: grid;
+  /* Header row is auto-sized, Content row takes the rest of the space */
+  grid-template-rows: auto 1fr; 
+  height: 100vh;
+}
+
+.header {
+  grid-row: 1 / 2;
+  position: sticky; /* Sticky makes it stay at the top when you scroll */
+  top: 0;
+  z-index: 100;
+}
+
+.main-content {
+  grid-row: 2 / 3;
+  overflow-y: auto; /* Allows only the content area to scroll if it's too long */
+  padding: 2rem 0;
+}
+/* --- END OF LAYOUT FIX --- */
+
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 100%;
+}
+
+.background-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(45deg, #4A00E0, #0c0a1a, #8A2BE2);
+  background-size: 400% 400%;
+  animation: gradient-animation 15s ease infinite;
+  z-index: -1;
+}
+
+@keyframes gradient-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* --- Header --- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 5%;
+  background: rgba(12, 10, 26, 0.3);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo a {
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.header .nav ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.header .nav ul li {
+  margin-left: 30px;
+}
+
+.header .nav ul li a,
+.header .nav ul li .btn {
+  color: #EAEAEA;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.header .nav ul li a:hover,
+.header .nav ul li .btn:hover {
+  color: #003cff;
+}
+
+/* --- Hero Section --- */
+.hero {
+  text-align: center;
+  padding: 40px 0;
+}
+.hero {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.hero h1 {
+  font-size: 5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #003cff, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+}
+
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.cta-button {
+  background: linear-gradient(90deg, hwb(198 57% 9%), #003cff);
+  color: #fff;
+  padding: 15px 35px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 10px 30px rgba(255, 0, 128, 0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 15px 35px rgba(255, 0, 128, 0.4);
+}
+
+
+/* --- Features Section --- */
+.features {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  backdrop-filter: blur(15px);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  border-color: #7eade3;
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #003cff;
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* --- Forms & Headings --- */
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.heading p {
+  color: #aaa;
+  font-size: 1.2rem;
+}
+
+.form {
+  width: 70%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: 1px solid #7eade3;
+  border-radius: 5px;
+  background: #7eade3;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.btn-block {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.btn:hover {
+  transform: scale(0.98);
+  background: #003cff;
+  border-color: #003cff;
+}
+
+/* --- Page Layout with Sidebar --- */
+.page-with-sidebar {
+  display: flex;
+  height: 100%;
+  gap: 20px;
+}
+
+.page-with-sidebar .interview-container {
+  flex-grow: 1;
+  height: 100%;
+}
+
+/* --- Interview Page Styles --- */
+.interview-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.chat-window {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.chat-bubble {
+  max-width: 70%;
+  padding: 10px 15px;
+  border-radius: 20px;
+  line-height: 1.5;
+}
+
+.chat-bubble.ai {
+  background-color: #3a3a3c;
+  align-self: flex-start;
+  border-bottom-left-radius: 5px;
+}
+
+.chat-bubble.user {
+  background-color: #8A2BE2;
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 5px;
+}
+
+.chat-input-area {
+  padding: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chat-input-area form {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input-area input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 50px;
+  background-color: #3a3a3c;
+  color: #fff;
+  font-size: 16px;
+}
+
+.chat-input-area button {
+  border-radius: 50px;
+}
+
+/* --- Chat History Sidebar Styles --- */
+.chat-history-sidebar {
+  width: 280px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chat-history-sidebar h3 {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 10px;
+}
+
+.history-list {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.history-item {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.history-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.chat-history-sidebar .btn {
+  margin-top: 20px;
+}
+.chat-history-sidebar .btn:hover {
+  background-color: #003cff;
+  border-color: #003cff;
+}
+/* StudyRoom Dark Theme */
+.studyroom-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #000000, #1a1a1a);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.studyroom-heading {
+  font-size: 2.5rem;
+  color: #00aaff;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.timer-display {
+  font-size: 6rem;
+  font-weight: bold;
+  color: #00e0ff;
+  text-shadow: 0 0 15px #00e0ff, 0 0 30px #00e0ff;
+  margin-bottom: 2rem;
+}
+
+.timer-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  padding: 0.8rem 1.8rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  color: #fff;
+}
+
+.btn.start {
+  background: #28a745;
+  box-shadow: 0 0 10px #28a745;
+}
+.btn.pause {
+  background: #ffc107;
+  color: #222;
+  box-shadow: 0 0 10px #ffc107;
+}
+.btn.reset {
+  background: #dc3545;
+  box-shadow: 0 0 10px #dc3545;
+}
+
+.btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.history-section {
+  margin-top: 2rem;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.history-section h2 {
+  margin-bottom: 1rem;
+  color: #00aaff;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+.history-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.history-section li {
+  background: #111;
+  color: #00e0ff;
+  margin: 0.4rem 0;
+  padding: 0.6rem;
+  border-radius: 6px;
+  text-shadow: 0 0 10px #00e0ff;
+  font-weight: 500;
+}
+.mode-display {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #ff8c00;
+  text-shadow: 0 0 10px #ff8c00;
+  letter-spacing: 2px;
+}
+.timer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  padding: 0.6rem 1.5rem;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn.start {
+  background: linear-gradient(45deg, #34d399, #10b981);
+  color: white;
+}
+
+.btn.pause {
+  background: linear-gradient(45deg, #fbbf24, #f59e0b);
+  color: white;
+}
+
+.btn.reset {
+  background: linear-gradient(45deg, #f87171, #ef4444);
+  color: white;
+}
+
+.btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.theme-selector {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.theme-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.theme-btn.active {
+  transform: scale(1.1);
+  border: 2px solid #fff;
+}
+.reviews {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.reviews-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.review-card {
+  background-color: #1e293b;
+  color: #f1f5f9;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 550px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+}
+
+.review-text {
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.reviewer-name {
+  font-weight: 600;
+}
+.contact-us{
+  text-align: center;
+  margin-top: 6rem;
+}
+.contact-cards {
+  display: flex;
+  justify-content: center;   /* centers the row */
+  align-items: stretch;      /* makes all cards same height */
+  gap: 2rem;                 /* spacing between cards */
+  flex-wrap: wrap;           /* wrap into new row on smaller screens */
+  margin-top: 2rem;
+}
+
+.contact-card {
+  background: #1e293b;       /* light background */
+  border-radius: 10px;
+  padding: 1.5rem;
+  min-width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+}
+
+.contact-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.contact-info {
+  font-weight: bold;
+  color: #2563eb;
+}
+.hero-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.hero-title h1 {
+  font-size: 5rem; /* bigger title */
+  font-weight: 900;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #2563eb, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.grad-cap {
+  font-size: 3.5rem;
+  opacity: 0;
+  transform: translateY(-60px) rotate(-30deg);
+  animation: dropIn 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes dropIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px) rotate(-30deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(15px) rotate(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+}
