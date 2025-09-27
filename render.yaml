@@ -1,9 +1,10 @@
 services:
   - type: web
-    name: plaacify
+    name: placify-app
     env: node
     plan: free
-    branch: master
-    buildCommand: npm install
-    startCommand: npm run dev
-    healthCheckPath: /
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
