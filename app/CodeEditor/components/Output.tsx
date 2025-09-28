@@ -179,10 +179,10 @@ export function Output({ editorRef, language, executeCode }: OutputProps) {
   return (
     <div className={cn(
       "flex flex-col",
-      isFullscreen ? "fixed inset-0 z-50 bg-white" : "w-1/2"
+      isFullscreen ? "fixed inset-0 z-50 bg-black" : "w-1/2"
     )}>
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center gap-2">
+      <div className="flex items-center justify-between mb-2 ml-2">
+        <div className="flex items-center gap-2 ml-2 mt-2">
           <span className="text-lg font-semibold">Output</span>
           {executionTime && (
             <span className="text-sm text-gray-500">
@@ -192,7 +192,7 @@ export function Output({ editorRef, language, executeCode }: OutputProps) {
         </div>
         <div className="flex items-center gap-2">
           <button
-            className="p-1 hover:bg-gray-100 rounded"
+            className="p-1 hover:bg-gray-600 rounded ml-2 mr-2 mt-1.5"
             onClick={() => setIsFullscreen(!isFullscreen)}
             title={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}
           >
@@ -208,10 +208,10 @@ export function Output({ editorRef, language, executeCode }: OutputProps) {
       <div className="flex items-center gap-2 mb-4">
         <button
           className={cn(
-            "px-4 py-2 rounded-md flex items-center gap-2 transition-all",
+            "px-5 py-2 rounded-md flex items-center gap-2 transition-all ml-2.5",
             isLoading
               ? "bg-gray-100 text-gray-500 cursor-not-allowed"
-              : "bg-green-500 text-white hover:bg-green-600"
+              : "bg-green-500 text-white hover:bg-green-800"
           )}
           disabled={isLoading}
           onClick={runCode}
@@ -223,12 +223,12 @@ export function Output({ editorRef, language, executeCode }: OutputProps) {
           {isLoading ? 'Running...' : 'Run Code'}
         </button>
         <div className="text-sm text-gray-500">
-          Press F5 or Ctrl+Enter to run
+          {/* Press F5 or Ctrl+Enter to run */}
         </div>
       </div>
 
       <div className={cn(
-        "flex-1 overflow-auto rounded-md border",
+        "flex-1 overflow-auto rounded-md border ml-2 mr-2",
         isError ? "border-red-200" : "border-gray-200"
       )}>
         <div className="p-4">

@@ -73,7 +73,7 @@ export default function CodeEditor({ questionData }: CodeEditorProps) {
           </button>
         </div>
         
-        <div className="flex-1">
+        <div className="flex-1 rounded-4xl  ">
           <Editor
             height="100%"
             defaultLanguage={language.id}
@@ -82,12 +82,12 @@ export default function CodeEditor({ questionData }: CodeEditorProps) {
             theme={theme}
             onMount={handleEditorDidMount}
             options={{
-              minimap: { enabled: false },
+              minimap: { enabled: true },
               fontSize: 16,
               lineNumbers: 'on',
-              roundedSelection: false,
+              roundedSelection: true,
               scrollBeyondLastLine: false,
-              readOnly: false,
+              readOnly: true,
               automaticLayout: true,
             }}
           />

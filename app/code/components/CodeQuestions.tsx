@@ -19,8 +19,8 @@ export default function CodeQuestions() {
           onClick={() => setSelectedDifficulty("all")}
           className={`px-4 py-2 rounded-md transition-colors ${
             selectedDifficulty === "all"
-              ? "bg-primary text-white"
-              : "bg-gray-100 hover:bg-gray-200"
+              ? "bg-gray-800 text-white"
+              : "bg-black-100 hover:bg-gray-800"
           }`}
         >
           All
@@ -30,7 +30,7 @@ export default function CodeQuestions() {
           className={`px-4 py-2 rounded-md transition-colors ${
             selectedDifficulty === "easy"
               ? "bg-green-500 text-white"
-              : "bg-gray-100 hover:bg-gray-200"
+              : "bg-black-100 hover:bg-gray-800"
           }`}
         >
           Easy
@@ -40,7 +40,7 @@ export default function CodeQuestions() {
           className={`px-4 py-2 rounded-md transition-colors ${
             selectedDifficulty === "medium"
               ? "bg-yellow-500 text-white"
-              : "bg-gray-100 hover:bg-gray-200"
+              : "bg-black-100 hover:bg-gray-800"
           }`}
         >
           Medium
@@ -50,7 +50,7 @@ export default function CodeQuestions() {
           className={`px-4 py-2 rounded-md transition-colors ${
             selectedDifficulty === "hard"
               ? "bg-red-500 text-white"
-              : "bg-gray-100 hover:bg-gray-200"
+              : "bg-black-100 hover:bg-gray-800"
           }`}
         >
           Hard

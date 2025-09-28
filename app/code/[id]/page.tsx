@@ -34,13 +34,12 @@ export default function QuestionPage() {
           <div>
             <h1 className="text-2xl font-bold mb-2">{question.title}</h1>
             <span
-              className={`px-2 py-1 rounded text-sm ${
-                question.difficulty === "Easy"
+              className={`px-2 py-1 rounded text-sm ${question.difficulty === "Easy"
                   ? "bg-green-100 text-green-700"
                   : question.difficulty === "Medium"
-                  ? "bg-yellow-100 text-yellow-700"
-                  : "bg-red-100 text-red-700"
-              }`}
+                    ? "bg-yellow-100 text-yellow-700"
+                    : "bg-red-100 text-red-700"
+                }`}
             >
               {question.difficulty}
             </span>
@@ -53,23 +52,25 @@ export default function QuestionPage() {
           <div className="prose dark:prose-invert">
             <h3>Problem Description</h3>
             <p className="whitespace-pre-line">{question.description}</p>
-            
+
             <h3>Test Cases</h3>
-            {question.testCases.map((testCase, index) => (
-              <div key={index} className="mb-4 p-4 bg-muted rounded-lg">
-                <div>
-                  <strong>Input:</strong> {testCase.input}
+            <div className="w-full max-w-3xl mx-auto ">
+              {question.testCases.map((testCase, index) => (
+                <div key={index} className="mb-4 p-4 bg-muted rounded-lg overflow-auto">
+                  <div>
+                    <strong>Input:</strong> {testCase.input}
+                  </div>
+                  <div className="font-mono text-sm">
+                    <strong>Output:</strong>{" [" + JSON.parse(testCase.output).join(", ") + "]"}
+                  </div>
                 </div>
-                <div>
-                  <strong>Output:</strong> {testCase.output}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
         <div className="flex-1">
-          <CodeEditor 
+          <CodeEditor
             questionData={{
               id: question.id,
               title: question.title,
