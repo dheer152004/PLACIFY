@@ -13,7 +13,7 @@ const CodeEditor = dynamic(() => import("../../CodeEditor/CodeMain"), {
 export default function QuestionPage() {
   const params = useParams();
   const router = useRouter();
-  const questionId = params.id;
+  const questionId = params?.id;
 
   const question = codeQuestions.find((q) => q.id === questionId);
 
