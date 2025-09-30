@@ -87,7 +87,7 @@ export default function CodeEditor({ questionData }: CodeEditorProps) {
               lineNumbers: 'on',
               roundedSelection: true,
               scrollBeyondLastLine: false,
-              readOnly: true,
+              readOnly: false,
               automaticLayout: true,
             }}
           />

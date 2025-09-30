@@ -10,7 +10,7 @@ import { CheckCircle2, XCircle } from "lucide-react";
 export default function QuestionPage() {
   const params = useParams();
   const router = useRouter();
-  const questionId = params.id;
+  const questionId = params?.id;
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);

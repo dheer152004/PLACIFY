@@ -69,6 +69,12 @@ export default function Home() {
             title="Mock Interviews"
             description="Simulate real interviews with AI-powered feedback."
             buttonText="Start Mock Interview"
+            href="/interview"
+          />
+          <InterviewCard
+            title="Last Year Questions "
+            description="Prepare yourself with previous year questions."
+            buttonText="Start questions"
             href="/"
           />
         </div>
