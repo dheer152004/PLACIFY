@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<H2>Placify is website user can do Interview preparation, logical reasoning,etc.
 
 ## Getting Started
 
